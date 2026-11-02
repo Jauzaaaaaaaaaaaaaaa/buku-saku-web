@@ -1,0 +1,411 @@
+/*
+  ==========================================================
+  FILE: style.css
+  FUNGSI: Mengatur tampilan halaman HTML.
+  CSS bekerja dengan pola:
+  selector {
+    property: value;
+  }
+
+  Contoh:
+  p {
+    color: red;
+  }
+
+  p       = selector, memilih elemen <p>
+  color   = property, properti yang diubah
+  red     = value, nilai properti
+  ==========================================================
+*/
+
+/*
+  Reset sederhana:
+  Menghilangkan margin/padding bawaan browser agar layout lebih mudah dikontrol.
+*/
+* {
+  box-sizing: border-box; /* Membuat padding dan border ikut dihitung dalam width/height. */
+  margin: 0;              /* Menghapus jarak luar bawaan. */
+  padding: 0;             /* Menghapus jarak dalam bawaan. */
+}
+
+/*
+  :root digunakan untuk membuat CSS variable.
+  Variable memudahkan penggunaan warna/font berulang.
+*/
+:root {
+  --primary: #2563eb;      /* Warna utama. */
+  --dark: #111827;         /* Warna teks gelap. */
+  --muted: #6b7280;        /* Warna teks sekunder. */
+  --light: #f3f4f6;        /* Warna latar terang. */
+  --white: #ffffff;        /* Warna putih. */
+  --border: #e5e7eb;       /* Warna garis border. */
+  --radius: 14px;          /* Radius sudut elemen. */
+}
+
+/*
+  body adalah seluruh badan halaman.
+*/
+body {
+  font-family: Arial, sans-serif; /* Jenis font. */
+  line-height: 1.6;               /* Tinggi baris agar teks nyaman dibaca. */
+  color: var(--dark);             /* Warna teks utama. */
+  background-color: var(--light); /* Warna latar halaman. */
+}
+
+/*
+  a memilih semua link.
+*/
+a {
+  color: inherit;          /* Link mengikuti warna teks parent. */
+  text-decoration: none;   /* Menghapus garis bawah link. */
+}
+
+/*
+  .container adalah class pembungkus agar konten tidak terlalu lebar.
+*/
+.container {
+  width: min(1100px, 92%); /* Lebar maksimal 1100px, tapi di HP menjadi 92%. */
+  margin: 0 auto;          /* Membuat container berada di tengah. */
+}
+
+/*
+  Header website.
+*/
+.site-header {
+  background-color: var(--white); /* Latar putih. */
+  border-bottom: 1px solid var(--border); /* Garis bawah header. */
+  position: sticky;       /* Header menempel saat discroll. */
+  top: 0;                 /* Menempel di bagian atas. */
+  z-index: 10;            /* Agar header berada di atas elemen lain. */
+}
+
+/*
+  Flexbox:
+  display: flex digunakan untuk menyusun child secara baris/kolom.
+*/
+.header-layout {
+  display: flex;                  /* Mengaktifkan flexbox. */
+  justify-content: space-between; /* Jarak kiri-kanan maksimal. */
+  align-items: center;            /* Sejajar vertikal di tengah. */
+  gap: 24px;                      /* Jarak antar child. */
+  padding: 18px 0;                /* Jarak dalam atas-bawah. */
+}
+
+.site-header h1 {
+  font-size: 24px;   /* Ukuran teks judul. */
+  margin-bottom: 4px; /* Jarak bawah. */
+}
+
+.site-header p {
+  color: var(--muted); /* Warna teks abu. */
+  font-size: 14px;     /* Ukuran teks kecil. */
+}
+
+/*
+  Navbar / menu.
+*/
+.navbar {
+  display: flex;      /* Menu sejajar horizontal. */
+  gap: 14px;          /* Jarak antar link. */
+  flex-wrap: wrap;    /* Link turun baris jika layar sempit. */
+}
+
+.navbar a {
+  padding: 8px 12px;          /* Ruang dalam link. */
+  border-radius: 999px;       /* Membuat bentuk pill/kapsul. */
+  background-color: var(--light);
+}
+
+.navbar a:hover {
+  background-color: var(--primary); /* Warna saat mouse diarahkan. */
+  color: var(--white);
+}
+
+/*
+  Hero section.
+*/
+.hero {
+  background: linear-gradient(135deg, #dbeafe, #ffffff);
+  /*
+    linear-gradient membuat warna gradasi.
+    135deg menentukan arah gradasi.
+  */
+  padding: 70px 0; /* Jarak atas-bawah besar. */
+}
+
+.hero h2 {
+  font-size: clamp(32px, 5vw, 56px);
+  /*
+    clamp(min, ideal, max):
+    ukuran font minimal 32px, ideal 5vw, maksimal 56px.
+  */
+  margin-bottom: 14px;
+}
+
+.hero p {
+  max-width: 720px;  /* Membatasi panjang paragraf agar mudah dibaca. */
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/*
+  Tombol utama.
+*/
+.btn-primary {
+  display: inline-block;       /* Bisa diberi padding dan tetap sejajar teks. */
+  border: none;                /* Menghapus border bawaan button. */
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;             /* Cursor menjadi tangan saat diarahkan. */
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;                /* Sedikit transparan saat hover. */
+}
+
+/*
+  Kartu section.
+*/
+.section-card {
+  background-color: var(--white);
+  margin: 28px auto;           /* Jarak luar atas-bawah dan tengah horizontal. */
+  padding: 28px;               /* Ruang dalam. */
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  /*
+    box-shadow: x y blur warna;
+    Membuat bayangan lembut.
+  */
+}
+
+.section-card h2 {
+  margin-bottom: 18px;
+  font-size: 28px;
+}
+
+.section-card h3 {
+  margin-top: 22px;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.section-card p {
+  margin-bottom: 12px;
+}
+
+blockquote {
+  border-left: 5px solid var(--primary); /* Garis kiri kutipan. */
+  padding: 10px 16px;
+  background-color: var(--light);
+  margin: 12px 0;
+  border-radius: 8px;
+}
+
+/*
+  Gambar responsif.
+*/
+.image-fluid {
+  width: 100%;        /* Gambar mengikuti lebar parent. */
+  max-width: 100%;    /* Tidak melebihi parent. */
+  height: auto;       /* Tinggi otomatis menjaga proporsi. */
+  border-radius: var(--radius);
+  margin: 12px 0;
+}
+
+/*
+  Tabel.
+*/
+table {
+  width: 100%;                 /* Tabel memenuhi container. */
+  border-collapse: collapse;   /* Menggabungkan garis border tabel. */
+  margin: 14px 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+th,
+td {
+  border: 1px solid var(--border); /* Garis setiap sel. */
+  padding: 12px;                   /* Ruang dalam sel. */
+  text-align: left;                /* Teks rata kiri. */
+}
+
+th {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+tr:nth-child(even) {
+  background-color: #f9fafb;
+  /*
+    nth-child(even) memilih baris genap.
+    Cocok untuk membuat tabel zebra.
+  */
+}
+
+/*
+  Form.
+*/
+.form-box {
+  display: grid;       /* Mengatur form sebagai grid satu kolom. */
+  gap: 10px;           /* Jarak antar input. */
+  max-width: 560px;
+}
+
+label {
+  font-weight: bold;   /* Label dibuat tebal. */
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;       /* Mengikuti font dari body. */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #93c5fd; /* Garis fokus saat input aktif. */
+  border-color: var(--primary);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  width: auto; /* Checkbox tidak perlu width 100%. */
+}
+
+/*
+  Grid kartu.
+  Cocok untuk daftar produk, fitur, artikel, dashboard, dll.
+*/
+.card-grid {
+  display: grid; /* Mengaktifkan CSS Grid. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /*
+    repeat(auto-fit, minmax(220px, 1fr)):
+    membuat kolom otomatis.
+    Minimal 220px, jika ruang cukup akan membagi sama rata.
+  */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.info-card {
+  background-color: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+/*
+  Layout dua kolom.
+*/
+.two-column-layout {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+  margin: 16px 0;
+}
+
+.content-left {
+  flex: 2; /* Lebih lebar daripada sidebar. */
+  background-color: var(--light);
+  padding: 18px;
+  border-radius: var(--radius);
+}
+
+.sidebar-right {
+  flex: 1; /* Lebih kecil daripada konten utama. */
+  background-color: #e0f2fe;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+
+/*
+  pre dan code untuk menampilkan contoh kode.
+*/
+pre {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: var(--radius);
+  overflow-x: auto; /* Jika kode panjang, bisa discroll horizontal. */
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+/*
+  Footer.
+*/
+.site-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  text-align: center;
+  padding: 24px 0;
+  margin-top: 36px;
+}
+
+/*
+  Media query:
+  Aturan CSS khusus untuk ukuran layar tertentu.
+  Di bawah 768px, layout dua kolom diubah menjadi satu kolom.
+*/
+@media (max-width: 768px) {
+  .header-layout {
+    flex-direction: column;      /* Susunan dari horizontal menjadi vertikal. */
+    align-items: flex-start;
+  }
+
+  .two-column-layout {
+    flex-direction: column;      /* Konten dan sidebar bertumpuk di HP. */
+  }
+
+  .section-card {
+    padding: 20px;
+  }
+}
+
+/*
+  ==========================================================
+  RINGKASAN PROPERTY CSS UMUM
+  ==========================================================
+
+  color: mengatur warna teks.
+  background-color: mengatur warna latar.
+  font-size: mengatur ukuran teks.
+  font-weight: mengatur ketebalan teks.
+  text-align: mengatur rata teks: left, center, right, justify.
+  margin: jarak luar elemen.
+  padding: jarak dalam elemen.
+  border: garis tepi elemen.
+  border-radius: membuat sudut membulat.
+  width: lebar elemen.
+  height: tinggi elemen.
+  display: mengatur jenis tampilan elemen.
+  position: mengatur posisi elemen.
+  top/right/bottom/left: jarak posisi jika memakai position.
+  z-index: urutan tumpukan elemen.
+  overflow: mengatur konten yang melebihi ukuran elemen.
+  gap: jarak antar item flex/grid.
+  flex: mengatur pembagian ruang dalam flexbox.
+  grid-template-columns: mengatur jumlah/lebar kolom grid.
+  box-shadow: membuat bayangan.
+  opacity: mengatur transparansi.
+  cursor: mengubah bentuk kursor.
+  transition: membuat perubahan lebih halus.
+*/

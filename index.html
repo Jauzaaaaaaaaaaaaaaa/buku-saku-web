@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--
+  <!DOCTYPE html>
+  Digunakan untuk memberi tahu browser bahwa dokumen ini memakai standar HTML5.
+-->
+
+<html lang="id">
+<!--
+  <html> adalah elemen utama/root dari halaman HTML.
+  lang="id" memberi tahu browser bahwa bahasa halaman adalah Bahasa Indonesia.
+-->
+
+<head>
+  <!--
+    <head> berisi informasi halaman yang tidak langsung tampil di layar,
+    seperti judul tab, link CSS, meta viewport, dan SEO.
+  -->
+
+  <meta charset="UTF-8">
+  <!-- charset="UTF-8" agar teks Indonesia, simbol, dan emoji terbaca dengan benar. -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- viewport membuat tampilan responsif di HP/tablet/laptop. -->
+
+  <title>Belajar HTML, CSS, dan PHP Native</title>
+  <!-- <title> menampilkan judul pada tab browser. -->
+
+  <link rel="stylesheet" href="style.css">
+  <!--
+    <link rel="stylesheet"> digunakan untuk menghubungkan file CSS eksternal.
+    href="style.css" artinya CSS diambil dari file style.css.
+  -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="atelier/atelier.css">
+<link rel="stylesheet" href="atelier/theme.css">
+<script src="atelier/theme.js"></script>
+<script src="atelier/atelier.js"></script>
+</head>
+
+<body>
+  <!--
+    <body> berisi semua konten yang tampil di halaman browser.
+  -->
+
+  <header class="site-header">
+    <!--
+      <header> biasanya dipakai untuk bagian paling atas halaman:
+      logo, nama website, navigasi, atau hero singkat.
+      class="site-header" dipakai agar bisa diatur tampilannya lewat CSS.
+    -->
+
+    <div class="container header-layout">
+      <!--
+        <div> adalah pembungkus umum tanpa makna khusus.
+        Biasanya dipakai untuk mengatur layout.
+        class="container" membatasi lebar konten.
+        class="header-layout" mengatur posisi logo dan menu.
+      -->
+
+      <div>
+        <h1>Catatan Belajar Coding</h1>
+        <!-- <h1> adalah judul utama halaman. Gunakan satu h1 utama per halaman. -->
+
+        <p>HTML untuk struktur, CSS untuk tampilan, PHP untuk logika server.</p>
+        <!-- <p> digunakan untuk paragraf teks. -->
+      </div>
+
+      <nav class="navbar">
+        <!-- <nav> digunakan untuk menu navigasi. -->
+
+        <a href="#html">HTML</a>
+        <!-- <a> membuat link. href="#html" menuju elemen dengan id="html". -->
+
+        <a href="#css">CSS</a>
+        <a href="#php">PHP</a>
+        <a href="#layout">Layout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!--
+      <main> berisi konten utama halaman.
+      Sebaiknya hanya ada satu <main> dalam satu halaman.
+    -->
+
+    <section class="hero">
+      <!-- <section> digunakan untuk membagi konten ke dalam bagian/topik. -->
+
+      <div class="container">
+        <h2>Tujuan File Ini</h2>
+        <!-- <h2> adalah subjudul setelah h1. -->
+
+        <p>
+          File ini bisa kamu gunakan sebagai acuan cepat saat belajar membuat program web.
+          Baca komentar di dalam kode untuk memahami fungsi setiap command/tag.
+        </p>
+
+        <button type="button" class="btn-primary">Contoh Tombol</button>
+        <!--
+          <button> membuat tombol.
+          type="button" artinya tombol biasa, tidak otomatis submit form.
+        -->
+      </div>
+    </section>
+
+    <section id="html" class="container section-card">
+      <h2>1. Dasar HTML</h2>
+
+      <article>
+        <!--
+          <article> cocok untuk konten mandiri seperti artikel, kartu berita, posting blog.
+        -->
+
+        <h3>Tag Teks</h3>
+
+        <p>
+          Ini contoh <strong>teks tebal</strong>, <em>teks miring</em>,
+          dan <mark>teks ditandai</mark>.
+        </p>
+        <!--
+          <strong> memberi penekanan penting, biasanya tampil tebal.
+          <em> memberi penekanan, biasanya tampil miring.
+          <mark> menandai teks seperti stabilo.
+        -->
+
+        <blockquote>
+          Belajar coding paling mudah adalah dengan membaca, mencoba, lalu mengubah kode.
+        </blockquote>
+        <!-- <blockquote> digunakan untuk kutipan panjang. -->
+
+        <small>Ini teks kecil menggunakan tag &lt;small&gt;.</small>
+        <!-- <small> biasanya dipakai untuk catatan kecil, copyright, disclaimer. -->
+      </article>
+
+      <article>
+        <h3>List / Daftar</h3>
+
+        <ul>
+          <!-- <ul> membuat daftar tidak berurutan/bullet. -->
+          <li>HTML membuat struktur halaman.</li>
+          <!-- <li> adalah item daftar. -->
+          <li>CSS mempercantik tampilan.</li>
+          <li>PHP memproses data di server.</li>
+        </ul>
+
+        <ol>
+          <!-- <ol> membuat daftar berurutan/angka. -->
+          <li>Buat file index.html</li>
+          <li>Buat file style.css</li>
+          <li>Hubungkan CSS ke HTML</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>Gambar</h3>
+
+        <img src="https://via.placeholder.com/600x250" alt="Contoh gambar placeholder" class="image-fluid">
+        <!--
+          <img> menampilkan gambar.
+          src adalah lokasi gambar.
+          alt adalah teks alternatif untuk aksesibilitas dan jika gambar gagal dimuat.
+          class="image-fluid" agar ukuran gambar responsif lewat CSS.
+        -->
+      </article>
+
+      <article>
+        <h3>Tabel</h3>
+
+        <table>
+          <!-- <table> digunakan untuk membuat tabel. -->
+
+          <thead>
+            <!-- <thead> bagian kepala tabel. -->
+            <tr>
+              <!-- <tr> membuat baris tabel. -->
+              <th>Tag</th>
+              <!-- <th> membuat kolom header tabel. -->
+              <th>Fungsi</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- <tbody> bagian isi tabel. -->
+            <tr>
+              <td>&lt;h1&gt; - &lt;h6&gt;</td>
+              <!-- <td> membuat data/kolom biasa. -->
+              <td>Membuat judul dari paling penting sampai paling kecil.</td>
+            </tr>
+            <tr>
+              <td>&lt;p&gt;</td>
+              <td>Membuat paragraf.</td>
+            </tr>
+            <tr>
+              <td>&lt;table&gt;</td>
+              <td>Membuat tabel data.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Form</h3>
+
+        <form action="belajar.php" method="POST" class="form-box">
+          <!--
+            <form> digunakan untuk mengirim data.
+            action="belajar.php" artinya data dikirim ke file belajar.php.
+            method="POST" artinya data dikirim tersembunyi di body request.
+          -->
+
+          <label for="nama">Nama</label>
+          <!-- <label> memberi keterangan untuk input. for harus sama dengan id input. -->
+
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama">
+          <!--
+            <input> menerima data dari user.
+            type="text" artinya input teks.
+            id dipakai oleh label/CSS/JS.
+            name dipakai saat data dikirim ke PHP.
+            placeholder adalah teks bantuan.
+          -->
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nama@email.com">
+          <!-- type="email" membantu validasi format email. -->
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan..."></textarea>
+          <!-- <textarea> untuk input teks panjang. -->
+
+          <label for="kelas">Pilih Kelas</label>
+          <select id="kelas" name="kelas">
+            <!-- <select> membuat dropdown pilihan. -->
+            <option value="">-- Pilih --</option>
+            <!-- <option> adalah isi pilihan dropdown. -->
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="php">PHP Native</option>
+          </select>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="setuju" name="setuju" value="ya">
+            <label for="setuju">Saya setuju belajar rutin</label>
+          </div>
+          <!-- type="checkbox" untuk pilihan ya/tidak atau banyak pilihan. -->
+
+          <button type="submit" class="btn-primary">Kirim ke PHP</button>
+          <!-- type="submit" mengirim form ke action. -->
+        </form>
+      </article>
+    </section>
+
+    <section id="css" class="container section-card">
+      <h2>2. Dasar CSS</h2>
+
+      <p>
+        Lihat file <strong>style.css</strong>. Di sana ada banyak properti CSS dengan komentar fungsi.
+      </p>
+
+      <div class="card-grid">
+        <!--
+          Tata letak grid:
+          parent memakai display: grid di CSS,
+          child otomatis menjadi item grid.
+        -->
+
+        <div class="info-card">
+          <h3>Selector</h3>
+          <p>Contoh: <code>p { color: red; }</code> memilih semua tag p.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Class</h3>
+          <p>Contoh: <code>.container { width: 90%; }</code> memilih elemen dengan class container.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>ID</h3>
+          <p>Contoh: <code>#html { scroll-margin-top: 20px; }</code> memilih elemen dengan id html.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="layout" class="container section-card">
+      <h2>3. Tata Letak Menggunakan div, Flexbox, dan Grid</h2>
+
+      <h3>Layout 2 Kolom dengan Flexbox</h3>
+
+      <div class="two-column-layout">
+        <!--
+          Ini contoh tata letak dua kolom.
+          Parent: .two-column-layout
+          Child: .content-left dan .sidebar-right
+        -->
+
+        <div class="content-left">
+          <h4>Konten Utama</h4>
+          <p>
+            Bagian ini biasanya dipakai untuk artikel, produk, daftar data,
+            atau konten utama aplikasi.
+          </p>
+        </div>
+
+        <aside class="sidebar-right">
+          <!-- <aside> dipakai untuk konten samping/sidebar. -->
+          <h4>Sidebar</h4>
+          <p>Bagian ini bisa berisi menu, kategori, iklan, atau ringkasan.</p>
+        </aside>
+      </div>
+
+      <h3>Layout Kartu dengan Grid</h3>
+
+      <div class="card-grid">
+        <div class="info-card">Kartu 1</div>
+        <div class="info-card">Kartu 2</div>
+        <div class="info-card">Kartu 3</div>
+      </div>
+
+      <h3>Contoh Struktur Umum Website</h3>
+
+      <pre><code>&lt;body&gt;
+  &lt;header&gt;Logo dan menu&lt;/header&gt;
+  &lt;main&gt;
+    &lt;section&gt;Hero&lt;/section&gt;
+    &lt;section&gt;Konten utama&lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;Copyright&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+      <!--
+        <pre> menampilkan teks sesuai format asli.
+        <code> menandai potongan kode.
+      -->
+    </section>
+
+    <section id="php" class="container section-card">
+      <h2>4. PHP Native</h2>
+
+      <p>
+        Untuk menjalankan contoh PHP, buka file <strong>belajar.php</strong> lewat server lokal,
+        misalnya XAMPP, Laragon, atau PHP built-in server.
+      </p>
+
+      <pre><code>php -S localhost:8000</code></pre>
+      <!-- Command terminal untuk menjalankan server PHP sederhana. -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <!-- <footer> biasanya berisi copyright, link tambahan, atau informasi kontak. -->
+    <div class="container">
+      <p>&copy; 2026 - Catatan Belajar HTML, CSS, dan PHP Native</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* MATERI WEB: buku saku. Kertas terang, pembatas warna per bahasa, sudut tertekuk. */
+:root { --h: #e8552d; --c: #2d6be8; --p: #7a4fe0; --pg: #fbf8f0; --ik: #20201f; --dm: #66645e; --at-accent: #fbf8f0; --at-on-accent: #20201f; --at-deep: #20201f; --at-mono: "Fira Code", monospace; }
+html { background: var(--pg); }
+body, body.at { font-family: "Rubik", system-ui, sans-serif; background: transparent !important; color: var(--ik); }
+.at-curtain__a, .at-curtain__b { border-radius: 0; inset: 0; }
+.bs-tabs { display: flex; gap: 6px; align-items: flex-end; }
+.bs-tabs i { display: block; padding: clamp(18px, 4vw, 34px) clamp(14px, 3vw, 28px); background: var(--c); color: #fff; font: 900 clamp(1.2rem, 4vw, 2.3rem) "Rubik", sans-serif; border-radius: 12px 12px 0 0; transform: translateY(70vh); animation: bs-up .75s var(--at-out) var(--d) forwards; }
+@keyframes bs-up { to { transform: none; } }
+.site-header { background: var(--ik) !important; color: var(--pg); box-shadow: none; }
+.site-header h1 { font-weight: 900; letter-spacing: -.03em; }
+.site-header p { color: #c8c5bb !important; }
+.navbar a { border-radius: 8px 8px 0 0; font-weight: 500; color: var(--pg) !important; }
+.navbar a:nth-child(3n+1):hover { background: var(--h) !important; }
+.navbar a:nth-child(3n+2):hover { background: var(--c) !important; }
+.navbar a:nth-child(3n):hover { background: var(--p) !important; }
+.hero { background: var(--pg) !important; color: var(--ik) !important; border-radius: 0; box-shadow: none; }
+.hero h2 { font-weight: 900; font-size: clamp(2.6rem, 8vw, 6rem) !important; line-height: 1; letter-spacing: -.04em; color: var(--ik) !important; }
+.hero p { color: var(--dm) !important; }
+.btn-primary { border-radius: 8px !important; background: var(--ik) !important; color: var(--pg) !important; font-weight: 700; transition: transform .4s var(--at-out), background-color .2s; }
+.btn-primary:hover { background: var(--h) !important; transform: translateY(-2px); }
+.section-card { position: relative; border: 0 !important; border-left: 7px solid var(--c) !important; border-radius: 0 16px 16px 0 !important; background: #fff !important; box-shadow: 0 16px 34px -28px rgba(0, 0, 0, .5) !important; }
+.section-card:nth-of-type(3n+1) { border-left-color: var(--h) !important; }
+.section-card:nth-of-type(3n) { border-left-color: var(--p) !important; }
+.section-card h2 { font-weight: 900; letter-spacing: -.02em; color: var(--ik) !important; }
+.section-card h3 { font-weight: 700; color: var(--ik) !important; }
+blockquote { border-left-color: var(--h) !important; background: #fff4e9 !important; border-radius: 0 10px 10px 0; }
+pre { border-radius: 12px !important; background: var(--ik) !important; color: #ece9df !important; font-family: "Fira Code", monospace !important; }
+code { font-family: "Fira Code", monospace; }
+th { background: var(--ik) !important; color: var(--pg) !important; }
+table { border-radius: 10px; overflow: hidden; }
+.info-card { border: 0 !important; border-top: 5px solid var(--c) !important; border-radius: 10px !important; transition: transform .5s var(--at-out); }
+.info-card:nth-child(3n+1) { border-top-color: var(--h) !important; }
+.info-card:nth-child(3n) { border-top-color: var(--p) !important; }
+.info-card:hover { transform: translateY(-5px) rotate(-.6deg); }
+input, textarea, select { border-radius: 8px !important; font-family: inherit; }
+.site-footer { background: var(--ik) !important; color: var(--pg) !important; }
+
+.navbar a { background: transparent !important; box-shadow: none !important; }
